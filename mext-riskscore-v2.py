@@ -52,6 +52,9 @@ while True:
 
         model = riskScoreDF["model"][i]
         asset_name = riskScoreDF["asset"][i]
+        score = riskScoreDF['score'][i]
+
+        print('Score ', score)
 
         if i+1 > len(riskScoreDF)-1:
             break
