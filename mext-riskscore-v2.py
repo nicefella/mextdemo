@@ -32,7 +32,7 @@ gauge = prom.Gauge(
 
 prom.start_http_server(5051)
 
-start = 0  # index start value in dataframe
+start = 7000  # index start value in dataframe
 k = 20  # increment value
 sonVeri = False
 
