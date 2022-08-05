@@ -30,7 +30,7 @@ gauge = prom.Gauge(
     ["asset", "model"]
 )
 
-prom.start_http_server(5051)
+prom.start_http_server(5055)
 
 start = 7000  # index start value in dataframe
 k = 5000  # increment value
