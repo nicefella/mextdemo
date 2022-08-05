@@ -61,7 +61,7 @@ while True:
         t = t.total_seconds()
 
         print(
-            f"{'Iteration: ' + i} Score: {score:<25} Model: {model:<25} Delay: {t:<25}")
+            f"{'Iteration: ' + i} Score: {str(score):<25} Model: {model:<25} Delay: {str(t):<25}")
 
         gauge.labels(asset_name, model).set(riskScoreDF["score"][i])
 
