@@ -33,7 +33,7 @@ gauge = prom.Gauge(
 prom.start_http_server(5051)
 
 start = 7000  # index start value in dataframe
-k = 20  # increment value
+k = 5000  # increment value
 sonVeri = False
 
 while True:
@@ -54,7 +54,7 @@ while True:
         asset_name = riskScoreDF["asset"][i]
         score = riskScoreDF['score'][i]
 
-        print('Score ', score)
+        print('Data point ', score, asset_name, model, 'Iteration : ', i)
 
         if i+1 > len(riskScoreDF)-1:
             break
@@ -70,10 +70,10 @@ while True:
             break
 
     if sonVeri == False:
-        print(k, " adet data yazıldı")
+        print(k, " rows starting from ", start, " transfered")
         start = start + k
     else:
-        print(start, " veri başarılı bir şekilde basıldı")
+        print(start, " rows succesfully transfered")
         start = 0
         k = 10
         sonVeri = False
