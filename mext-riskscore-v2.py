@@ -54,13 +54,13 @@ while True:
         asset_name = riskScoreDF["asset"][i]
         score = riskScoreDF['score'][i]
 
-        print('Data point ', score, asset_name, model, 'Iteration : ', i)
-
         if i+1 > len(riskScoreDF)-1:
             break
 
         t = riskScoreDF['date'][i+1] - riskScoreDF['date'][i]
         t = t.total_seconds()
+
+        print('Iteration : ', i, 'Data point : ', score, model, 'Delay : ', t)
 
         gauge.labels(asset_name, model).set(riskScoreDF["score"][i])
 
